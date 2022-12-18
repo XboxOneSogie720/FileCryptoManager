@@ -36,5 +36,10 @@ A homemade micro-program written in C++ that encrypts a file byte by byte with y
 
 **YOU ARE RESPONSIBLE FOR A LOSS OF DATA!**
 
+## Demo
+**Here's a demo of using the program on a plain text file.**
+
+![](https://github.com/XboxOneSogie720/FileCryptoManager/blob/main/Other/demo.gif)
+
 ## Credits
 The encryption and decryption functions used in this program are based off of [this YouTube video.](https://www.youtube.com/watch?v=DOlcAVlUbdk&t=164s)
