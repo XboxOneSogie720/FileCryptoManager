@@ -18,8 +18,8 @@ void encrypt(string inFile, int key) {
 
     //Open the file streams
     //Open inFile to read and open the tempFile to write
-    file.open(inFile, ios::in);
-    tempFile.open(tempFilePath, ios::out);
+    file.open(inFile, ios::in | ios::binary);
+    tempFile.open(tempFilePath, ios::out | ios::binary);
     cout << BOLDRED << "inFile and working file have been opened!" << RESET << endl;
 
     //Read the file byte by byte
@@ -40,8 +40,8 @@ void encrypt(string inFile, int key) {
     cout << BOLDYELLOW << "inFile and working file have been closed!" << RESET << endl;
 
     //Re-open the file streams, but instead we write the encrypted contents of tempFile to the origional file
-    file.open(inFile, ios::out);
-    tempFile.open(tempFilePath, ios::in);
+    file.open(inFile, ios::out | ios::binary);
+    tempFile.open(tempFilePath, ios::in | ios::binary);
     cout << YELLOW << "Writing encrypted data back to the inFile..." << RESET << endl;
 
     //Read tempFile byte by byte
