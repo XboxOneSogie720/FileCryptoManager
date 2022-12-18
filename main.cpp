@@ -3,6 +3,7 @@
 #include <include/encrypter.hpp>
 #include <include/decrypter.hpp>
 #include <include/colors.hpp>
+#include <cstring>
 using namespace std;
 
 void showUsage(string currentProgramName) {
