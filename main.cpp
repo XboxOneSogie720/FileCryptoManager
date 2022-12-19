@@ -11,7 +11,7 @@ void showUsage(string currentProgramName) {
     cout << YELLOW << "\n-e    Encryption mode" << RESET << endl;
     cout << YELLOW << "-d    Decryption mode" << RESET << endl;
     cout << YELLOW << "-f    Specify the file you want to work with" << RESET << endl;
-    cout << YELLOW << "-k    Specify the key you wnat to use to encrypt/decrypt your file" << RESET << endl;
+    cout << YELLOW << "-k    Specify the key you want to use to encrypt/decrypt your file" << RESET << endl;
     cout << BOLDGREEN << "\nTip: Put your key in quotes so that you can use special characters like these: !, @, #, $, &, *, etc." << RESET << endl;
     cout << BOLDRED << "\n{!} YOU CAN ONLY DECRYPT FILES ENCRYPTED BY THIS PROGRAM\nYOU ARE RESPONSIBLE FOR A LOSS OF DATA!" << RESET << endl;
 }
