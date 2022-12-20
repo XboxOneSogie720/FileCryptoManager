@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <include/encrypter.hpp>
 #include <include/decrypter.hpp>
 #include <include/colors.hpp>
@@ -23,9 +22,7 @@ int main(int argc, char** argv) {
     string file;
 
     string key;
-    vector<int> eachKeyCharInInt;
-    int translatedKey;
-    
+    string translatedKey;
 
     if(argc < 6 || argc > 6) {
         showUsage((string)*(&argv[0]));
@@ -60,12 +57,9 @@ int main(int argc, char** argv) {
         }
     }
 
-    //Update the key with the ASCII equivilent number for each character
-    for(int i = 0; i < key.length(); i++) {
-        eachKeyCharInInt.push_back(int(key[i]));
-    }
-    for(int i = 0; i < size(eachKeyCharInInt); i++) {
-        translatedKey += eachKeyCharInInt[i];
+    //Create the translated key
+    for(int i = 0; i < size(key); i++) {
+        translatedKey.push_back(int(int(key[i]) - (size(key) - i)));
     }
 
     if(mode == "ENCRYPT") {
