@@ -1,4 +1,4 @@
 #include <string>
 using namespace std;
 
-void encrypt(string inFile, int key);
+void encrypt(string inFile, string key);
